@@ -20,7 +20,7 @@ Coupé en 2 mini projet, comprendre et utiliser le Framework Php Laravel.
 
 - Mise en place d'un environnement de développement via [Vagrant](https://www.vagrantup.com/docs/installation/).
 - Utilisation de [Migrations](https://laravel.com/docs/5.8/migrations).
-- Générer données factices avec des modèles.
+- Générer données factices à l'aide de modèles.
 - MVC ([Modèle-vue-contrôleur](https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur)).
 - Rôles et Permissions avec [Spatie](https://github.com/spatie/laravel-permission).
 - Utilisation du Framework et du CLI([Command-line interface](https://fr.wikipedia.org/wiki/Interface_en_ligne_de_commande)).
