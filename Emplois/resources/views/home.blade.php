@@ -32,6 +32,7 @@
                         </div>
                     </div>
                     <br>
+
                 @endforeach
 
                 {{ $jobs->links() }}

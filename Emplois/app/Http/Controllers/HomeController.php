@@ -25,10 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $companies = Auth::user()->companies;
-        foreach($companies as $company){
-            $jobs = $company->jobs;
-        }
+        $company = Auth::user()->companies->first();
+        $jobs = Job::where('company_id', $company->id)->paginate(5);
+
+        //var_dump($jobs);
+        //die();
 
         return view('home', [
             'jobs' => $jobs

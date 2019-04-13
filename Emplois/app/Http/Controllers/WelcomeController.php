@@ -2,21 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Job;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class WelcomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -24,7 +14,13 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $jobs = Auth::user()->jobs;
-        return view('home', ['jobs' => $jobs]);
+        $jobs = Job::orderBy('updated_at')->paginate(5);
+        //Afficher le contenu d'une variable puis le processus
+        //var_dump($jobs);
+        //die();
+
+        return view('welcome', [
+            'jobs' => $jobs
+        ]);
     }
 }

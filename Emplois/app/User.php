@@ -47,7 +47,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Company', 'user_id');
     }
 
-    public function job(){
-        return $this->hasMany('App\Job', 'user_id');
+    public function jobs(){
+        return $this->belongsToMany('App\Job', 'userpost', 'user_id', 'job_id');
     }
 }
